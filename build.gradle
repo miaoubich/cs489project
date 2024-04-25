@@ -70,3 +70,18 @@ testing {
         }
     }
 }
+
+springBoot {
+    mainClassName = 'com.casumo.videorental.Application' // Specify your main application class here
+}
+
+// Adding spring-boot-maven-plugin equivalent configuration
+bootJar {
+    mainClassName = 'com.casumo.videorental.Application' // Specify your main application class here
+}
+
+// Adding finalName configuration equivalent
+bootJar {
+    archiveBaseName = 'cs489-project' // Specify your final name (artifact name)
+    archiveVersion = '' // Optionally specify version if needed
+}
