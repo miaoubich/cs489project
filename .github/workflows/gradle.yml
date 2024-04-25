@@ -21,7 +21,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     
-    - Grany execute permission
+    - Grant execute permission
       run: chmod +x gradlew
 
     # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
