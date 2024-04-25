@@ -1,11 +1,6 @@
 package com.casumo.videorental;
 
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -24,7 +19,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 import com.casumo.videorental.dto.CustomerRequest;
 import com.casumo.videorental.dto.CustomerResponse;
@@ -37,11 +31,8 @@ import com.casumo.videorental.security.JwtService;
 import com.casumo.videorental.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.RequiredArgsConstructor;
-
 @SpringBootTest
 @AutoConfigureMockMvc
-@RequiredArgsConstructor
 class CustomerControllerTests {
 
 	@Autowired
