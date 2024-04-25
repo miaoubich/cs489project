@@ -1,10 +1,3 @@
-You may use this skeleton as a starting point for your solution. It contains a simple
-Spring Boot web application written using Java 17 and built using Gradle.
-
-## Requirements
-
-You need to have Java JDK 17 installed on your machine and available on your path.
-
 ## Instructions
 
 The application is built using Gradle, via the included wrapper (`gradlew`).
@@ -22,7 +15,7 @@ The application is built using Gradle, via the included wrapper (`gradlew`).
 * API Endpoints
 * Database Configuration
 
-This is a fully functional Java Spring Boot application is designed to manage customers, videos, video copies, and rentals. It provides RESTful API endpoints for performing CRUD operations on these entities. The application uses a modular structure with separate modules for Customer , Video, VideoCopy, and Rental, each encapsulating related functionality. API authentication/authorization implementation - I've skip it since it's not optional.
+This is a fully functional Java Spring Boot application is designed to manage customers, videos, video copies, and rentals. It provides RESTful API endpoints for performing CRUD operations on these entities. The application uses a modular structure with separate modules for Customer , Video, VideoCopy, and Rental, each encapsulating related functionality. For API authentication/authorization I'm using JWT with Spring Security 6, where I am integrating JWT with Spring Security 6.
 
 ### Technologies Used ###
 * Java
@@ -31,6 +24,7 @@ This is a fully functional Java Spring Boot application is designed to manage cu
 * MySql Workbench, and MySQL Docker image
 * JUnit 5 (for unit and integration testing)
 * MockMvc (for testing MVC controllers)
+* JWT with Spring Security 6
 * Gradle (for dependency management)
 * IDE STS (Spring Tool Suite)
 * Postman API
@@ -51,6 +45,9 @@ The latest version of STS (Spring Tool Suite) IDE which is built-in support for 
 IDE: STS (Spring Tool Suite) for development
 
 ### API Endpoints ###
+### User API ###
+* Post http://localhost:8080/video-rental-store/api/v1/auth/register-user: Create new user
+* Post http://localhost:8080/video-rental-store/api/v1/auth/login: To create the Token
 ### Customer API ###
 * GET http://localhost:8080/video-rental-store/api/v1/customer: Retrieve all customers.
 * GET http://localhost:8080/video-rental-store/api/v1/customer/{customerId}: Retrieve customer by ID.
