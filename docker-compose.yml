@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+ db:
+  container_name: videodb-container
+  image: mysql
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: password
+   MYSQL_DATABASE: videodb
+   
+  ports:
+   - 3309:3306
+  volumes:
+   - ./init-scripts:/docker-entrypoint-initdb.d
+
+#  adminer:
+#    container_name: adminercontainer
+#    image: adminer:latest
+#    restart: always
+#    ports:
+#      - 8000:8080
