@@ -79,7 +79,7 @@ classDiagram
       Customer : +varchar(45) email
       Customer : -int Rental_rentalId
 
-      Rental "1" -- "0..*" VideoCopy : has >
+      Rental "0..*" -- "1" VideoCopy : has >
       Rental : +int rentalId
       Rental : +date rentalDate
       Rental : +date returnDate
