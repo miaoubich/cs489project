@@ -86,7 +86,7 @@ classDiagram
       Rental : -int customer_id
       Rental : -int VideoCopy_videoCopy_id
 
-      Video -- VideoCopy : has >
+      Video "1" -- "0..*" VideoCopy : has >
       Video : +int videoId
       Video : +varchar(45) videoTitle
       Video : +varchar(45) director
