@@ -68,3 +68,68 @@ IDE: STS (Spring Tool Suite) for development
 * DELETE http://localhost:8080/video-rental-store/api/v1/videocopy/{copyId}: Delete a video copy.
 ### Database Configuration ###
 The application uses an MySQL database for local development and MySQL Docker image. Database configuration properties can be found in application.yml.
+
+### Class Diagram
+```mermaid
+classDiagram
+      Customer "1" -- "0..*" Rental : has >
+      Customer : +int customerId
+      Customer : +varchar(45) firstName
+      Customer : +varchar(45) lastName
+      Customer : +varchar(45) email
+      Customer : -int Rental_rentalId
+
+      Rental "1" -- "0..*" VideoCopy : has >
+      Rental : +int rentalId
+      Rental : +date rentalDate
+      Rental : +date returnDate
+      Rental : -int customer_id
+      Rental : -int VideoCopy_videoCopy_id
+
+      Video -- VideoCopy : has >
+      Video : +int videoId
+      Video : +varchar(45) videoTitle
+      Video : +varchar(45) director
+      Video : +double Video_Rental_Price
+      Video : +varchar(45) year
+
+      VideoCopy : +int videoCopy_id
+      VideoCopy : +tinyint available
+      VideoCopy : -int Video_videoId
+```
+
+### ER Diagram
+```mermaid
+erDiagram
+    CUSTOMER ||--o{ RENTAL : "has"
+    CUSTOMER {
+        int customerId PK
+        varchar(45) firstName
+        varchar(45) lastName
+        varchar(45) email
+    }
+    
+    VIDEO ||--|{ VIDEOCOPY : "has"
+    VIDEO {
+        int videoId PK
+        varchar(45) videoTitle
+        varchar(45) director
+        double Video_Rental_Price
+        varchar(45) year
+    }
+    
+    VIDEOCOPY ||--o{ RENTAL : "has"
+    VIDEOCOPY {
+        int videoCopyId PK
+        tinyint available
+        int videoId FK
+    }
+    
+    RENTAL {
+        int rentalId PK
+        date rentalDate
+        date returnDate
+        int customerId FK
+        int videoCopyId FK
+    }
+```
